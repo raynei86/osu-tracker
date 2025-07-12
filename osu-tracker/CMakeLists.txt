@@ -42,15 +42,12 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(cpr)
 
-# Unix like already have zlib most of the time
-if (WIN32)
+set(ZLIB_BUILD_STATIC ON CACHE BOOL "" FORCE) # Force static builds
   FetchContent_Declare(
     zlib
-    URL https://github.com/madler/zlib.git
-    GIT_TAG 1.3.1
+    URL https://zlib.net/zlib-1.3.1.tar.gz
 )
 FetchContent_MakeAvailable(zlib)
-endif()
 
 
 
